@@ -47,7 +47,7 @@
       <span class="p-1 inline-block text-center w-8 h-8 bg-yellow-400 rounded-full">₿</span>
     </div>
     <div>
-      <select class="bg-[#243643]" default="Português">
+      <select class="bg-gray-700 w-full rounded-lg py-2 flex justify-between items-center px-4 mb-1 outline-none">
         <option v-for="(item, index) in languages" :key="index">{{ item }}</option>
       </select>
     </div>
