@@ -46,17 +46,39 @@
       Balance: {{ t.formatNumber(balanceBitcoin, '0.00000000') }}
       <span class="p-1 inline-block text-center w-8 h-8 bg-yellow-400 rounded-full">₿</span>
     </div>
-
+    <div>
+      <select class="bg-[#243643]" default="Português">
+        <option v-for="(item, index) in languages" :key="index">{{ item }}</option>
+      </select>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { t, betValueBitcoin, balanceBitcoin, balanceInCurrency, betState, bettingState, registerBet, skipCard } from '@/states';
+import { t, betValueBitcoin, balanceBitcoin, balanceInCurrency, betState, bettingState, registerBet, skipCard, languages } from '@/states';
 
 export default defineComponent({
   setup() {
     return { t, betValueBitcoin, balanceBitcoin, balanceInCurrency, betState, bettingState, registerBet, skipCard, };
   },
+  data(){
+    return { languages: [  "English",
+                "Español",
+                "日本語",
+                "中文",
+                "Português",
+                "Pусский",
+                "Français",
+                "Deustch",
+                "हिन्दी",
+                "Indonesian",
+                "한국어",
+                "Polski",
+                "Türkçe",
+                "Tiếng Việt",
+                "Suomen",
+                "اَلْعَرَبِيَّةُ",] }
+  }
 });
 </script>
