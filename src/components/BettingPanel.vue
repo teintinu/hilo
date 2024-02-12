@@ -1,6 +1,6 @@
 
 <template>
-  <div class="bg-gray-800 text-white w-full max-w-sm rounded-lg shadow-md p-4">
+  <div class="bg-gray-800 text-white w-full max-w-sm rounded-lg shadow-md p-4 relative">
 
     <div class="flex justify-between items-center mb-4">
       <div>
@@ -46,9 +46,9 @@
       Balance: {{ t.formatNumber(balanceBitcoin, '0.00000000') }}
       <span class="p-1 inline-block text-center w-8 h-8 bg-yellow-400 rounded-full">₿</span>
     </div>
-    <div>
-      <select class="bg-gray-700 w-full rounded-lg py-2 flex justify-between items-center px-4 mb-1 outline-none">
-        <option v-for="(item, index) in languages" :key="index">{{ item }}</option>
+    <div class="absolute bottom-0 height-0 w-11/12">
+      <select class="bg-gray-700 w-full rounded-lg py-2 flex justify-between items-center px-4 mb-1 mt-2 outline-none hover:bg-[#243643]">
+        <option v-for="(options, index) in languages" :key="index">{{ options }}</option>
       </select>
     </div>
   </div>
