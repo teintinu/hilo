@@ -26,6 +26,7 @@ export const pt: I18N = {
     totalProfit: "Total Profit (1.00×)",
   },
   currency: "BRL",
+  language: "Portugues",
   formatNumber(n: number, option: keyof typeof numberFormating) {
     return numberFormating[option].format(n)
   },

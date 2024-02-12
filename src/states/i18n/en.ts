@@ -26,6 +26,7 @@ export const en = {
     totalProfit: "Total Profit (1.00×)",
   },
   currency: "USD",
+  language: "English",
   formatNumber(n: number, option: keyof typeof numberFormating) {
     return numberFormating[option].format(n)
   },
