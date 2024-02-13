@@ -7,7 +7,7 @@ const numberFormating = {
   '0.00000000': Intl.NumberFormat('en', { minimumFractionDigits: 8, maximumFractionDigits: 8 }),
 }
 
-export const pt: I18N = {
+export const Portugues: I18N = {
   "betting": {
     "balance": "Saldo",
     "higherOrEqual": "Maior ou igual",
@@ -18,10 +18,10 @@ export const pt: I18N = {
   },
   options: {
     profitGreaterOrEqual(percent: number){
-        return `Escolha lucro Maior ou igual a (${pt.formatNumber(percent, '0.00')}×)`
+        return `Escolha lucro Maior ou igual a (${Portugues.formatNumber(percent, '0.00')}×)`
     },
     profitLowerOrEqual(percent: number){
-        return `Escolha lucro Menor ou igual a (${pt.formatNumber(percent, '0.00')}×`
+        return `Escolha lucro Menor ou igual a (${Portugues.formatNumber(percent, '0.00')}×`
     },
     totalProfit: "Total Profit (1.00×)",
   },

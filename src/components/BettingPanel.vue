@@ -47,8 +47,9 @@
       <span class="p-1 inline-block text-center w-8 h-8 bg-yellow-400 rounded-full">₿</span>
     </div>
     <div class="absolute bottom-0 height-0 w-11/12">
-      <select class="bg-gray-700 w-full rounded-lg py-2 flex justify-between items-center px-4 mb-1 mt-2 outline-none hover:bg-[#243643] relative">
-        <option v-for="language in languages" :key="language">{{ language }}</option>
+      <select class="bg-gray-700 w-full rounded-lg py-2 flex justify-between items-center px-4 mb-1 mt-2 outline-none hover:bg-[#243643] relative"
+        v-model="selectLanguage" @change="changeLanguage">
+        <option v-for="language in languages" :key="language" :value="language">{{ language }}</option>
       </select>
     </div>
   </div>
@@ -56,16 +57,22 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { t, betValueBitcoin, balanceBitcoin, balanceInCurrency, betState, bettingState, registerBet, skipCard, languages } from '@/states';
+import { t, betValueBitcoin, balanceBitcoin, balanceInCurrency, betState, bettingState, registerBet, skipCard, languages, setLanguage } from '@/states';
 
 export default defineComponent({
   setup() {
-    return { t, betValueBitcoin, balanceBitcoin, balanceInCurrency, betState, bettingState, registerBet, skipCard, };
+    return { t, betValueBitcoin, balanceBitcoin, balanceInCurrency, betState, bettingState, registerBet, skipCard, 
+      selectLanguage: '', };
+  },
+  methods: {
+    changeLanguage() {
+      setLanguage(this.selectLanguage);
+    }
   },
   computed: {
   languages() {
-    return Object.values(languages).map((language) => language.language);
-  }
+    return Object.keys(languages);
+    }
   },
 });
 </script>

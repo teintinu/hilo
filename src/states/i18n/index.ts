@@ -1,11 +1,12 @@
 import { ref } from 'vue'
-import { en } from "./en";
-import { pt } from "./pt";
+import { English } from "./en";
+import { Portugues } from "./pt";
+import { Espanol } from './es';
 import { I18N } from './i18nHelpers';
 
-export const t = ref<I18N>(en)
+export const t = ref<I18N>(English)
 
-export const languages: Record<string, I18N> = { en, pt }
+export const languages: Record<string, I18N> = { English, Portugues, Espanol }
 
 export function setLanguage(language: keyof typeof languages) {
     t.value = languages[language]
