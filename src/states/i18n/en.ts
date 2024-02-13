@@ -7,7 +7,7 @@ const numberFormating = {
   '0.00000000': Intl.NumberFormat('en', { minimumFractionDigits: 8, maximumFractionDigits: 8 }),
 }
 
-export const en = {
+export const English = {
   "betting": {
     "balance": "Balance",
     "higherOrEqual": "Higher or Equal",
@@ -18,14 +18,15 @@ export const en = {
   },
   options: {
     profitGreaterOrEqual(multiplier: number){
-        return `Profit if greater or equal (${en.formatNumber(multiplier, '0.00')}×)`
+        return `Profit if greater or equal (${English.formatNumber(multiplier, '0.00')}×)`
     },
     profitLowerOrEqual(multiplier: number){
-        return `Profit if lower or equal (${en.formatNumber(multiplier, '0.00')}×`
+        return `Profit if lower or equal (${English.formatNumber(multiplier, '0.00')}×`
     },
     totalProfit: "Total Profit (1.00×)",
   },
   currency: "USD",
+  language: "English",
   formatNumber(n: number, option: keyof typeof numberFormating) {
     return numberFormating[option].format(n)
   },
